@@ -1,7 +1,7 @@
 const Table = (props) => {
   return (
     <>
-      <table id="table-student">
+      <table id="table-student" className="table">
         <thead>
           <tr>
             <th>No</th>

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    --main-color: #3467ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #efefef;
+}
+
+.container {
+    background-color: white;
+    width: 80%;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.container main {
+    padding: 2rem;
+}
+
+/* header */
+
+.header-title {
+    font-size: 1.7rem;
+    background-color: #3467ff;
+    color: white;
+    padding: 1rem;
+}
+
+/* form */
+.form {
+    margin-bottom: 2rem;
+}
+
+.form-item {
+    margin-bottom: 1rem;
+    width: 50%;
+}
+
+.form-item label {
+    display: block;
+    width: fit-content;
+    margin-bottom: .5rem;
+}
+
+.form-item input, .form-item select {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+.form-item select {
+    cursor: pointer;
+}
+
+.submit {
+    width: fit-content !important;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #4170fd;
+}
+
+/* table */
+.table {
+    border: 1px solid #d2d2d2;
+    border-radius: 20px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.table th, .table td {
+    padding: .2rem;
+}
+
+.table th {
+    text-align: start;
+}
+
+.table tr {
+    margin-bottom: 2rem;
+}

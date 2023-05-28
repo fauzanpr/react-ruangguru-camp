@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./components/Form";
 import Table from "./components/Table";
+import Header from "./components/Header";
 
 const App = () => {
   const students = [
@@ -88,8 +89,13 @@ const App = () => {
 
   return (
     <>
-      <Form />
-      <Table students={ students } />
+      <div className="container">
+        <Header />
+        <main>
+          <Form />
+          <Table students={students} />
+        </main>
+      </div>
     </>
   );
 };
