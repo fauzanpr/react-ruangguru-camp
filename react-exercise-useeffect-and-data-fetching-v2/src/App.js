@@ -48,6 +48,7 @@ const App = () => {
         <option value="planets">Planets</option>
         <option value="starship">Starships</option>
       </select>
+      <h1>HELLO FUCKIN WORLD</h1>
       {loading && <p>Loading...</p>}
       { data && option === 'people' && <People people={ data } /> }
       { data && option === 'planets' && <Planet planets={ data } /> }
