@@ -79,6 +79,20 @@
       "gender": "Female",
       "faculty": "Fakultas Teknologi Informasi dan Sains",
       "programStudy": "Informatika"
+    },
+    {
+      "fullname": "Fauzan Pradana",
+      "birthDate": "2002-06-14",
+      "gender": "Male",
+      "programStudy": "Ekonomi",
+      "id": 11
+    },
+    {
+      "fullname": "ozan",
+      "birthDate": "2023-06-03",
+      "gender": "Male",
+      "programStudy": "Ekonomi",
+      "id": 12
     }
   ]
 }

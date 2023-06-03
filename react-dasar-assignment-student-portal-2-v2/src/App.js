@@ -14,7 +14,7 @@ const App = () => {
         setIsLoading(false);
         setStudents(res);
       });
-  }, []);
+  });
 
   return (
     <>
