@@ -79,22 +79,6 @@
       "gender": "Female",
       "faculty": "Fakultas Teknologi Informasi dan Sains",
       "programStudy": "Informatika"
-    },
-    {
-      "fullname": "Fauzan Pradana",
-      "birthDate": "2002-06-14",
-      "gender": "Male",
-      "programStudy": "Informatika",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "id": 11
-    },
-    {
-      "fullname": "Ana Elsa",
-      "birthDate": "1998-09-12",
-      "gender": "Female",
-      "programStudy": "Administrasi Bisnis",
-      "faculty": "Fakultas Ilmu Sosial dan Politik",
-      "id": 12
     }
   ]
 }

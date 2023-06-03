@@ -1,8 +1,13 @@
 const Table = (props) => {
-  // TODO: answer here
+    const deleteBtnHandler = (studentId) => {
+        fetch(`http://localhost:3001/student/${studentId}`, {
+            method: 'DELETE'
+        });
+    };
+
   return (
     <>
-      <table id="table-student" className="table">
+      <table id="table-student" className="table student-data-row">
         <thead>
           <tr>
             <th>No</th>
@@ -25,7 +30,7 @@ const Table = (props) => {
                   <td>{item.gender}</td>
                   <td>{item.faculty}</td>
                   <td>{item.programStudy}</td>
-                  <td>Delete</td>
+                  <td><button data-testid={`delete-${item.id}`} className="btn-delete" onClick={() => deleteBtnHandler(item.id)}>Delete</button></td>
                 </tr>
               );
             })}

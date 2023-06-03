@@ -22,7 +22,7 @@ const App = () => {
         <Header />
         <main>
           <Form />
-          {isLoading ? <p>Loading...</p> : <Table students={students} />}
+          {isLoading ? <p>Loading....</p> : <Table students={students} />}
         </main>
       </div>
     </>
