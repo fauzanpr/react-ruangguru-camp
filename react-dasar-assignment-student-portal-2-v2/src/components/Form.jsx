@@ -7,18 +7,38 @@ const Form = (props) => {
   const [programStudy, setPrody] = useState("Ekonomi");
   const [isReload, setIsReload] = useState(false);
   // TODO: answer here
-  const submitFormHandle = (e) => {
+  const cekFaculty = (prody) => {
+    if (!prody) return false;
+    if (prody === "Ekonomi" || prody === "Manajemen" || prody === "Akuntansi")
+      return "Fakultas Ekonomi";
+    else if (
+      prody === "Administrasi Publik" ||
+      prody === "Administrasi Bisnis" ||
+      prody === "Hubungan Internasional"
+    )
+      return "Fakultas Ilmu Sosial dan Politik";
+    else if (prody === "Teknik Sipil" || prody === "Arsitektur")
+      return "Fakultas Teknik";
+    else if (
+      prody === "Matematika" ||
+      prody === "Fisika" ||
+      prody === "Informatika"
+    )
+      return "Fakultas Teknologi Informasi dan Sains";
+  };
+  const submitFormHandle = () => {
     // e.preventDefault();
-    const students = { fullname, birthDate, gender, programStudy };
-    fetch('http://localhost:3001/student', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(students)
+    const faculty = cekFaculty(programStudy);
+    const students = { fullname, birthDate, gender, programStudy, faculty };
+    fetch("http://localhost:3001/student", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(students),
     }).then(() => {
-        setIsReload(true);
-    })
+      setIsReload(true);
+    });
   };
 
   return (
@@ -46,14 +66,24 @@ const Form = (props) => {
         </div>
         <div className="form-item">
           <label htmlFor="input-gender">Gender</label>
-          <select name="gender" id="input-gender" data-testid="gender" onChange={(e) => setGender(e.target.value)}>
+          <select
+            name="gender"
+            id="input-gender"
+            data-testid="gender"
+            onChange={(e) => setGender(e.target.value)}
+          >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
         </div>
         <div className="form-item">
           <label htmlFor="input-prody">Program Study</label>
-          <select name="programStudy" id="input-prody" data-testid="prody" onChange={(e) => setPrody(e.target.value)}>
+          <select
+            name="programStudy"
+            id="input-prody"
+            data-testid="prody"
+            onChange={(e) => setPrody(e.target.value)}
+          >
             <option value="Ekonomi">Ekonomi</option>
             <option value="Manajemen">Manajemen</option>
             <option value="Akuntansi">Akuntansi</option>
