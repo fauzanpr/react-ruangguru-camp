@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Form = (props) => {
   const [fullname, setFullname] = useState("");
@@ -26,11 +26,11 @@ const Form = (props) => {
     )
       return "Fakultas Teknologi Informasi dan Sains";
   };
-  const submitFormHandle = () => {
+  const submitFormHandle = async () => {
     // e.preventDefault();
     const faculty = cekFaculty(programStudy);
     const students = { fullname, birthDate, gender, programStudy, faculty };
-    fetch("http://localhost:3001/student", {
+    await fetch("http://localhost:3001/student", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
