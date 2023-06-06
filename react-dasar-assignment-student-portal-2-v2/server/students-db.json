@@ -2,10 +2,10 @@
   "student": [
     {
       "fullname": "Fauzan Pradana",
-      "birthDate": "2002-06-14",
+      "birthDate": "",
       "gender": "Male",
-      "programStudy": "Informatika",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
+      "programStudy": "Ekonomi",
+      "faculty": "Fakultas Ekonomi",
       "id": 1
     }
   ]

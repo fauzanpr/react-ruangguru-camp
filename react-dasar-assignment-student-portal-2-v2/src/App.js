@@ -7,31 +7,19 @@ const App = () => {
   // TODO: answer here
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-    // const getData = async () => {
-    //   await fetch("http://localhost:3001/student")
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     setIsLoading(false);
-    //     setStudents(res);
-    //   }).catch((e) => {
-    //     console.log(e);
-    //     setIsLoading(false);
-    //   });
-    // };
-  //   const getData = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:3001/student");
-  //       console.log('masuk sini');
-  //       const data = await res.json();
-  //       setStudents(data);
-  //       setLoading(false);
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/student");
+        const data = await res.json();
+        setStudents(data);
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    getData();
+  });
 
   return (
     <>
@@ -39,7 +27,7 @@ const App = () => {
         <Header />
         <main>
           <Form />
-          <Table />
+          {loading ? <p>Loading....</p> : <Table students={students} />}
         </main>
       </div>
     </>

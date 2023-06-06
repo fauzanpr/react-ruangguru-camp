@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
 
-const Table = () => {
+const Table = (props) => {
   const deleteBtnHandler = async (studentId) => {
     await fetch(`http://localhost:3001/student/${studentId}`, {
       method: "DELETE",
     });
-    isReload(!reload);
   };
-  const [students, setStudents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [reload, isReload] = useState(false);
+  // const [students, setStudents] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getStudents = async () => {
-      const response = await fetch("http://localhost:3001/student/");
-      const data = await response.json();
-      setStudents(data);
-      setLoading(false);
-      isReload(true);
-    };
-    getStudents();
-  }, [reload]);
+  // useEffect(() => {
+  //   const getStudents = async () => {
+  //     const response = await fetch("http://localhost:3001/student/");
+  //     const data = await response.json();
+  //     setStudents(data);
+  //     setLoading(false);
+  //     isReload(true);
+  //   };
+  //   getStudents();
+  // }, [reload]);
 
   return (
     <>
@@ -37,10 +35,8 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {loading ? (
-            <p>Loading....</p>
-          ) : (
-            students.map((student) => {
+          {props.students &&
+            props.students.map((student) => {
               return (
                 <tr key={student.id}>
                   <td>{student.id}</td>
@@ -60,8 +56,7 @@ const Table = () => {
                   </td>
                 </tr>
               );
-            })
-          )}
+            })}
         </tbody>
       </table>
     </>
