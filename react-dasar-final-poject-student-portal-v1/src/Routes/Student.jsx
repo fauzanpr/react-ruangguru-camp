@@ -9,7 +9,7 @@ const Student = () => {
   const url = "http://localhost:3001/student";
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [studentFilter, setStudentFilter] = useState("all");
+  const [studentFilter, setStudentFilter] = useState("All");
 
   const fetchStudent = async () => {
     try {
@@ -36,6 +36,7 @@ const Student = () => {
 
   const filterHandler = (faculty) => {
     setStudentFilter(faculty);
+
   };
 
   useEffect(() => {
@@ -51,7 +52,7 @@ const Student = () => {
         value={studentFilter}
         onChange={(e) => filterHandler(e.target.value)}
       >
-        <option value="all">All</option>
+        <option value="All">All</option>
         <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
         <option value="Fakultas Ilmu Sosial dan Politik">
           Fakultas Ilmu Sosial dan Politik
@@ -77,11 +78,11 @@ const Student = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => {
-            if (studentFilter === "all") {
+          {students.map((student, index) => {
+            if (studentFilter === "All") {
               return (
                 <tr className="student-data-row" key={student.id}>
-                  <td>{student.id}</td>
+                  <td>{index+1}</td>
                   <td>
                     <Link to={`${student.id}`}>{student.fullname}</Link>
                   </td>
@@ -101,7 +102,7 @@ const Student = () => {
             if (student.faculty === studentFilter) {
               return (
                 <tr className="student-data-row" key={student.id}>
-                  <td>{student.id}</td>
+                  <td>{index+1}</td>
                   <td>
                     <Link to={`${student.id}`}>{student.fullname}</Link>
                   </td>

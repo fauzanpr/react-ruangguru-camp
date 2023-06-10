@@ -1,7 +1,7 @@
 {
   "student": [
     {
-      "fullname": "Djarot",
+      "fullname": "Djarot Purnomo",
       "address": "Bogor, Indonesia",
       "phoneNumber": "+6280987654321",
       "birthDate": "1995-03-15",
@@ -9,16 +9,6 @@
       "programStudy": "Administrasi Bisnis",
       "faculty": "Fakultas Ilmu Sosial dan Politik",
       "id": 1
-    },
-    {
-      "fullname": "Ozannnn",
-      "address": "Bandung, Indonesia",
-      "phoneNumber": "+6289876543210",
-      "birthDate": "1993-08-21",
-      "gender": "Male",
-      "programStudy": "Matematika",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "id": 2
     },
     {
       "id": 3,
@@ -140,6 +130,17 @@
       "phoneNumber": "+6281010101010",
       "faculty": "Fakultas Ekonomi",
       "programStudy": "Akuntansi"
+    },
+    {
+      "fullname": "Fauzan Pradana",
+      "profilePicture": "Profile Picture",
+      "address": "Trenggalek",
+      "birthDate": "2002-06-14",
+      "gender": "Male",
+      "faculty": "Fakultas Teknologi Informasi dan Sains",
+      "phoneNumber": "085236876083",
+      "programStudy": "Informatika",
+      "id": 15
     }
   ]
 }

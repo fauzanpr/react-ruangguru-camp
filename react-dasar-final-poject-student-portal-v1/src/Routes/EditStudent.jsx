@@ -83,7 +83,7 @@ const EditStudent = () => {
         },
         body: JSON.stringify(data),
       });
-      navigate('/student');
+      navigate("/student");
     } catch (e) {
       console.log("error on edit submit");
       console.log(e);
@@ -92,7 +92,7 @@ const EditStudent = () => {
 
   useEffect(() => {
     fetchStudentDetail();
-  }, [id]);
+  }, []);
   return (
     <>
       {/* TODO: answer here */}
@@ -107,6 +107,7 @@ const EditStudent = () => {
               <label htmlFor="fullname">Fullname</label>
               <input
                 type="text"
+                data-testid="name"
                 value={fullname}
                 onChange={(e) => setFullname(e.target.value)}
               />
@@ -116,6 +117,7 @@ const EditStudent = () => {
               <input
                 type="text"
                 value={address}
+                data-testid="address"
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
@@ -124,6 +126,7 @@ const EditStudent = () => {
               <input
                 type="text"
                 value={phoneNumber}
+                data-testid="phoneNumber"
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
@@ -132,6 +135,8 @@ const EditStudent = () => {
               <input
                 type="date"
                 value={birthDate}
+                data-testid="date"
+                id="birthDate"
                 onClick={(e) => setBirthDate(e.target.value)}
               />
             </div>
@@ -141,6 +146,7 @@ const EditStudent = () => {
                 name=""
                 id=""
                 value={gender}
+                data-testid="gender"
                 onChange={(e) => setGender(e.target.value)}
               >
                 <option value="Male">Male</option>
