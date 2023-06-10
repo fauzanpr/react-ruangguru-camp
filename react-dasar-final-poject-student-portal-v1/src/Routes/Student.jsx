@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import NavBar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 const Student = () => {
   // TODO: answer here
@@ -13,7 +14,6 @@ const Student = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
       setStudents(data);
       if (loading) setLoading(false);
     } catch (error) {
@@ -59,7 +59,9 @@ const Student = () => {
               return (
                 <tr className="student-data-row" key={student.id}>
                   <td>{student.id}</td>
-                  <td>{student.fullname}</td>
+                  <td>
+                    <Link to={`${student.id}`}>{student.fullname}</Link>
+                  </td>
                   <td>{student.faculty}</td>
                   <td>{student.programStudy}</td>
                   <td>
