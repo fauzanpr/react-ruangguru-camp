@@ -111,17 +111,6 @@
       "programStudy": "Hubungan Internasional"
     },
     {
-      "id": 11,
-      "fullname": "Andre Wijaya",
-      "profilePicture": "https://randomuser.me/api/portraits/men/11.jpg",
-      "address": "Surabaya, Indonesia",
-      "birthDate": "1998-02-18",
-      "gender": "Male",
-      "phoneNumber": "+6287777777777",
-      "faculty": "Fakultas Teknik",
-      "programStudy": "Arsitektur"
-    },
-    {
       "id": 12,
       "fullname": "Dewi Susanti",
       "profilePicture": "https://randomuser.me/api/portraits/women/12.jpg",
@@ -164,50 +153,6 @@
       "phoneNumber": "+6281212121212",
       "faculty": "Fakultas Ilmu Sosial dan Politik",
       "programStudy": "Administrasi Bisnis"
-    },
-    {
-      "id": 16,
-      "fullname": "Yulia Cahyani",
-      "profilePicture": "https://randomuser.me/api/portraits/women/16.jpg",
-      "address": "Surabaya, Indonesia",
-      "birthDate": "1996-04-17",
-      "gender": "Female",
-      "phoneNumber": "+6281313131313",
-      "faculty": "Fakultas Teknik",
-      "programStudy": "Teknik Sipil"
-    },
-    {
-      "id": 17,
-      "fullname": "Tono Saputra",
-      "profilePicture": "https://randomuser.me/api/portraits/men/17.jpg",
-      "address": "Jakarta, Indonesia",
-      "birthDate": "1995-10-11",
-      "gender": "Male",
-      "phoneNumber": "+6281414141414",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "programStudy": "Informatika"
-    },
-    {
-      "id": 18,
-      "fullname": "Nina Wahyuni",
-      "profilePicture": "https://randomuser.me/api/portraits/women/18.jpg",
-      "address": "Bandung, Indonesia",
-      "birthDate": "1993-05-27",
-      "gender": "Female",
-      "phoneNumber": "+6281515151515",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "programStudy": "Matematika"
-    },
-    {
-      "id": 19,
-      "fullname": "Arief Kurniawan",
-      "profilePicture": "https://randomuser.me/api/portraits/men/19.jpg",
-      "address": "Yogyakarta, Indonesia",
-      "birthDate": "1994-12-03",
-      "gender": "Male",
-      "phoneNumber": "+6281616161616",
-      "faculty": "Fakultas Ekonomi",
-      "programStudy": "Manajemen"
     }
   ]
 }

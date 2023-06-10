@@ -9,6 +9,7 @@ const Student = () => {
   const url = "http://localhost:3001/student";
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [studentFilter, setStudentFilter] = useState("all");
 
   const fetchStudent = async () => {
     try {
@@ -33,29 +34,51 @@ const Student = () => {
     }
   };
 
+  const filterHandler = (faculty) => {
+    setStudentFilter(faculty);
+  };
+
   useEffect(() => {
     fetchStudent();
   }, []);
 
-  return (
-    <>
-      {/* TODO: answer here */}
-      <NavBar />
-      <p>Halaman student</p>
-      {loading && <p>Loading ...</p>}
-      {!loading && (
-        <table id="table-student">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Full Name</th>
-              <th>Faculty</th>
-              <th>Program Study</th>
-              <th>Option</th>
-            </tr>
-          </thead>
-          <tbody>
-            {students.map((student) => {
+  const Filter = () => {
+    return (
+      <select
+        id="filter"
+        name="filter-faculty"
+        data-testid="filter"
+        value={studentFilter}
+        onChange={(e) => filterHandler(e.target.value)}
+      >
+        <option value="all">All</option>
+        <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
+        <option value="Fakultas Ilmu Sosial dan Politik">
+          Fakultas Ilmu Sosial dan Politik
+        </option>
+        <option value="Fakultas Teknik">Fakultas Teknik</option>
+        <option value="Fakultas Teknologi Informasi dan Sains">
+          Fakultas Teknologi Informasi dan Sains
+        </option>
+      </select>
+    );
+  };
+
+  const StudentTable = () => {
+    return (
+      <table id="table-student">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Full Name</th>
+            <th>Faculty</th>
+            <th>Program Study</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student) => {
+            if (studentFilter === "all") {
               return (
                 <tr className="student-data-row" key={student.id}>
                   <td>{student.id}</td>
@@ -74,9 +97,44 @@ const Student = () => {
                   </td>
                 </tr>
               );
-            })}
-          </tbody>
-        </table>
+            }
+            if (student.faculty === studentFilter) {
+              return (
+                <tr className="student-data-row" key={student.id}>
+                  <td>{student.id}</td>
+                  <td>
+                    <Link to={`${student.id}`}>{student.fullname}</Link>
+                  </td>
+                  <td>{student.faculty}</td>
+                  <td>{student.programStudy}</td>
+                  <td>
+                    <button
+                      data-testid={`delete-${student.id}`}
+                      onClick={() => handleDeleteBtn(student.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            }
+          })}
+        </tbody>
+      </table>
+    );
+  };
+
+  return (
+    <>
+      {/* TODO: answer here */}
+      <NavBar />
+      <p>Halaman student</p>
+      {loading && <p>Loading ...</p>}
+      {!loading && (
+        <>
+          <Filter />
+          <StudentTable />
+        </>
       )}
     </>
   );
