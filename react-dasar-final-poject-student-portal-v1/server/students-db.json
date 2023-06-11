@@ -44,15 +44,14 @@
       "programStudy": "Teknik Sipil"
     },
     {
-      "id": 6,
-      "fullname": "Lisa Wong",
-      "profilePicture": "https://randomuser.me/api/portraits/women/6.jpg",
+      "fullname": "Lisa Wong Fei Hung",
       "address": "Surabaya, Indonesia",
+      "phoneNumber": "+6281111111111",
       "birthDate": "1996-09-02",
       "gender": "Female",
-      "phoneNumber": "+6281111111111",
+      "programStudy": "Informatika",
       "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "programStudy": "Informatika"
+      "id": 6
     },
     {
       "id": 7,
@@ -66,15 +65,14 @@
       "programStudy": "Fisika"
     },
     {
-      "id": 8,
       "fullname": "Siti Indah",
-      "profilePicture": "https://randomuser.me/api/portraits/women/8.jpg",
       "address": "Bandung, Indonesia",
+      "phoneNumber": "+6283333333333",
       "birthDate": "1992-12-25",
       "gender": "Female",
-      "phoneNumber": "+6283333333333",
+      "programStudy": "Informatika",
       "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "programStudy": "Informatika"
+      "id": 8
     },
     {
       "id": 9,
@@ -133,13 +131,12 @@
     },
     {
       "fullname": "Fauzan Pradana",
-      "profilePicture": "Profile Picture",
-      "address": "Trenggalek",
+      "address": "Trenggalek, Indonesia",
+      "phoneNumber": "085236876083",
       "birthDate": "2002-06-14",
       "gender": "Male",
-      "faculty": "Fakultas Teknologi Informasi dan Sains",
-      "phoneNumber": "085236876083",
       "programStudy": "Informatika",
+      "faculty": "Fakultas Teknologi Informasi dan Sains",
       "id": 15
     }
   ]

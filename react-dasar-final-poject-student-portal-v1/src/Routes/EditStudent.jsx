@@ -18,21 +18,26 @@ const EditStudent = () => {
   const [gender, setGender] = useState("");
   const [programStudy, setProgramStudy] = useState("");
 
-  const URL = "http://localhost:3001/student/" + id;
+  const URL = `http://localhost:3001/student/${id}`;
 
   const fetchStudentDetail = async () => {
     try {
-      const response = await fetch(URL);
-      const data = await response.json();
-      console.log(data);
-      setStudent(data);
-      setFullname(student.fullname);
-      setAddress(student.address);
-      setPhoneNumber(student.phoneNumber);
-      setBirthDate(student.birthDate);
-      setGender(student.gender);
-      setProgramStudy(student.programStudy);
-      setLoading(false);
+      await fetch(URL)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setStudent(res);
+          setFullname(res.fullname);
+          setAddress(res.address);
+          setPhoneNumber(res.phoneNumber);
+          setBirthDate(res.birthDate);
+          setGender(res.gender);
+          setProgramStudy(res.programStudy);
+        })
+        .then(() => {
+          console.log(`the fullname is ${fullname}`);
+          setLoading(false);
+        });
     } catch (error) {
       console.log("error while fetching data on edit");
       console.log(error);
@@ -91,6 +96,7 @@ const EditStudent = () => {
   };
 
   useEffect(() => {
+    console.log(`render ulang pada id ${id}`);
     fetchStudentDetail();
   }, []);
   return (
@@ -99,7 +105,7 @@ const EditStudent = () => {
       <NavBar />
       <p>Halaman edit student</p>
       {loading && <p>Loading ...</p>}
-      {!loading && (
+      {!loading && student && (
         <div>
           <img src={student.profilePicture} alt="" />
           <form onSubmit={(e) => submitEditHandler(e)}>
@@ -108,8 +114,8 @@ const EditStudent = () => {
               <input
                 type="text"
                 data-testid="name"
-                value={fullname}
                 onChange={(e) => setFullname(e.target.value)}
+                value={fullname}
               />
             </div>
             <div>
