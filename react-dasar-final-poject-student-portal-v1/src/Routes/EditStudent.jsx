@@ -16,7 +16,7 @@ const EditStudent = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [gender, setGender] = useState("");
-  const [programStudy, setProgramStudy] = useState("");
+  const [programStudy, setProgramStudy] = useState("Ekonomi");
 
   const URL = `http://localhost:3001/student/${id}`;
 
@@ -45,7 +45,7 @@ const EditStudent = () => {
   };
 
   const cekFaculty = (programStudy) => {
-    if (!programStudy) return false;
+    if (!programStudy) return "Fakultas Ekonomi";
     if (
       programStudy === "Ekonomi" ||
       programStudy === "Manajemen" ||
@@ -142,8 +142,7 @@ const EditStudent = () => {
                 type="date"
                 value={birthDate}
                 data-testid="date"
-                id="birthDate"
-                onClick={(e) => setBirthDate(e.target.value)}
+                onChange={(e) => setBirthDate(e.target.value)}
               />
             </div>
             <div>
@@ -166,7 +165,7 @@ const EditStudent = () => {
                 id="input-prody"
                 data-testid="prody"
                 value={programStudy}
-                onClick={(e) => setProgramStudy(e.target.value)}
+                onChange={(e) => setProgramStudy(e.target.value)}
               >
                 <option value="Ekonomi">Ekonomi</option>
                 <option value="Manajemen">Manajemen</option>
